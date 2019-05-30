@@ -51,19 +51,28 @@ class Grid {
       this.open(rowIndex, colIndex);
 
       // console.log(markMatrix);
-      // if (markMatrix.toString().split(',').every(val => val === '9' || val === '-1')) {
-      //   matrix.forEach((rowValue, rowIndex) => rowValue.map((colValue, colIndex) => {
-      //     const fun = () => {
-      //       this.$cellArray[rowIndex][colIndex]
-      //         .empty()
-      //         .removeClass('boom')
-      //         .removeClass('open')
-      //         .removeClass('mark')
-      //         .addClass(`num-${colValue}`)
-      //     }
-      //     setTimeout(fun, 20);
-      //   }))
-      // }
+      
+      if (markMatrix.toString().split(',').every(val => val === '9' || val === '-1')) {
+        matrix.forEach((rowValue, rowIndex) => rowValue.map((colValue, colIndex) => {
+          const that = this;
+          ((row, col, val) => {
+            setTimeout(() => {
+              const r = Math.floor(Math.random() * 256)
+              const g = Math.floor(Math.random() * 256)
+              const b = 210
+              // const b = Math.floor(Math.random() * 256)
+              that.$cellArray[row][col]
+                .empty()
+                .removeClass('boom')
+                .removeClass('open')
+                .removeClass('mark')
+                .css('background-color', `rgba(${r}, ${g}, ${b}, 0.6)`)
+                // .addClass(`num-${v}`)
+            }, 20 * (row + col))
+          })(rowIndex, colIndex, colValue)
+
+        }))
+      }
       
       // var all = document.querySelectorAll('.col')
       // var allNum = 0

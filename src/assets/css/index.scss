@@ -23,81 +23,89 @@ body {
 }
 
 
-.row {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  letter-spacing: -8px;
-}
 
-.col {
-  display: inline-block;
-  background: rgba(32, 226, 255, 0.41);
-  border: 1px solid rgb(129, 129, 129);
-  margin: 1.5px;
-  width: 23px;
-  height: 23px;
-  letter-spacing: normal;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.2s;
-  &.mark:not(.open)::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3.5px;
-    width: 18px;
-    height: 18px;
-    background: url('~@/assets/icon/flag.svg') no-repeat;
-    background-size: 18px 18px;
-  }
-  &.open {
-    background-color: #fff;
-  }
-  &.boom {
-    background: url('~@/assets/icon/boom.svg') no-repeat 2.5px 2px;
-    background-size: 18px 18px;
-  }
-  &:hover {
-    background: blue;
-  }
 
-  &.num-1 {
-    background-color: rgb(8, 153, 235);
-  }
 
-  &.num-2 {
-    background-color: rgb(255, 45, 178);
-  }
 
-  &.num-3 {
-    background-color: rgb(109, 224, 176);
-  }
-
-  &.num-4 {
-    background-color: rgb(8, 153, 235);
-  }
-
-  &.num-5 {
-    background-color: rgb(255, 167, 45);
-  }
-
-  &.num-6 {
-    background-color: rgb(49, 140, 102);
-  }
-
-  &.num-7 {
-    background-color: rgb(168, 55, 237);
-  }
-
-  &.num-8 {
-    background-color: rgb(15, 254, 154);
-  }
-}
-
-.gameBox {
+.game-box {
   margin-top: 30px;
+  .row {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    letter-spacing: -8px;
+  }
+  .col {
+    display: inline-block;
+    background: rgba(32, 226, 255, 0.41);
+    border: 1px solid rgb(129, 129, 129);
+    margin: 1.5px;
+    width: 23px;
+    height: 23px;
+    letter-spacing: normal;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.mark:not(.open)::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3.5px;
+      width: 18px;
+      height: 18px;
+      background: url('~@/assets/icon/flag.svg') no-repeat;
+      background-size: 18px 18px;
+    }
+
+    &.open {
+      background-color: #fff;
+    }
+
+    &.boom {
+      background: url('~@/assets/icon/boom.svg') no-repeat 2.5px 2px;
+      background-size: 18px 18px;
+    }
+
+    &:hover {
+      background-color: blue;
+      background-image: none;
+
+    }
+
+    &.num-1 {
+      background-color: rgb(8, 153, 235);
+    }
+
+    &.num-2 {
+      background-color: rgb(255, 45, 178);
+    }
+
+    &.num-3 {
+      background-color: rgb(109, 224, 176);
+    }
+
+    &.num-4 {
+      background-color: rgb(8, 153, 235);
+    }
+
+    &.num-5 {
+      background-color: rgb(255, 167, 45);
+    }
+
+    &.num-6 {
+      background-color: rgb(49, 140, 102);
+    }
+
+    &.num-7 {
+      background-color: rgb(168, 55, 237);
+    }
+
+    &.num-8 {
+      background-color: rgb(15, 254, 154);
+    }
+  }
 }
 
 .img-flag {
